@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLCHOTHUENHA" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-AAITQIGN;Initial Catalog=QLCHOTHUENHA;Integrated Security=True;Trust Server Certificate=True" SettingsObjectName="WPFNha.Properties.Settings" SettingsPropertyName="QLCHOTHUENHAConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.HOPDONG" Member="HOPDONGs">
+    <Type Name="HOPDONG">
+      <Column Name="SoHD" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaNha" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MaKhach" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="NgayBatDau" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="NgayKetThuc" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="KHACHTHUENHA_HOPDONG" Member="KHACHTHUENHA" ThisKey="MaKhach" OtherKey="MaKhach" Type="KHACHTHUENHA" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="NHA_HOPDONG" Member="NHA" ThisKey="MaNha" OtherKey="MaNha" Type="NHA" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KHACHTHUENHA" Member="KHACHTHUENHAs">
+    <Type Name="KHACHTHUENHA">
+      <Column Name="MaKhach" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenKhach" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="GioiTinh" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="KHACHTHUENHA_HOPDONG" Member="HOPDONGs" ThisKey="MaKhach" OtherKey="MaKhach" Type="HOPDONG" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NHA" Member="NHAs">
+    <Type Name="NHA">
+      <Column Name="MaNha" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenChuNha" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="GiaThue" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="DaCHoThue" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="NHA_HOPDONG" Member="HOPDONGs" ThisKey="MaNha" OtherKey="MaNha" Type="HOPDONG" />
+    </Type>
+  </Table>
+</Database>

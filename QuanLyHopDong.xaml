@@ -1,0 +1,67 @@
+﻿<Window x:Class="WPFNha.QuanLyHopDong"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFNha"
+        mc:Ignorable="d"
+        Title="QuanLyHopDong" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <GroupBox Header="Thông tin hợp đồng">
+                <Grid Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"></ColumnDefinition>
+                        <ColumnDefinition ></ColumnDefinition>
+                        <ColumnDefinition ></ColumnDefinition>
+                        <ColumnDefinition Width="100"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+
+
+                    <TextBlock Text="Số hợp đồng" Grid.Column="0" Grid.Row="0"></TextBlock>
+                    <TextBox x:Name="txtMaHopDong" Grid.Column="1" Grid.Row="0"></TextBox>
+
+                    <TextBlock Text="Tên chủ nhà: " Grid.Column="0" Grid.Row="1"></TextBlock>
+                    <TextBox x:Name="txtTenChuNha" Grid.Column="1" Grid.Row="1"></TextBox>
+
+                    <TextBlock Text="Tên khách hàng: " Grid.Column="0" Grid.Row="2"></TextBlock>
+                    <TextBox x:Name="txtTenKh" Grid.Column="1" Grid.Row="2"></TextBox>
+
+                    <TextBlock Text="Ngày bắt đầu: " Grid.Column="0" Grid.Row="4"></TextBlock>
+                    <DatePicker x:Name="dtpNgayBatDau" Grid.Column="1" Grid.Row="4"></DatePicker>
+
+                    <TextBlock Text="Ngày kết thúc: " Grid.Column="0" Grid.Row="5"></TextBlock>
+                    <DatePicker x:Name="dtpNgayKetThu" Grid.Column="1" Grid.Row="5"></DatePicker>
+
+                    <GroupBox Header="Thành tiền" Grid.Column="0" Grid.Row="10" Width="300" Grid.ColumnSpan="5" HorizontalAlignment="Left">
+                        <TextBox x:Name="txtThanhTien" Width="200"></TextBox>
+                    </GroupBox>
+                </Grid>
+            </GroupBox>
+
+            <DataGrid x:Name="DataGrid" Height="150" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <!--Đặt tên binding giống với các thuộc tính trong SQL-->
+                    <DataGridTextColumn Header="Số hợp đồng" Width="100" Binding="{Binding SoHD}"/>
+                    <DataGridTextColumn Header="Tên chủ nhà" Width="100" Binding="{Binding TenChuNha}"/>
+                    <DataGridTextColumn Header="Tên khách hàng" Width="100" Binding="{Binding TenKhachHang}"/>
+                    <DataGridTextColumn Header="Ngày bắt đầu" Width="100" Binding="{Binding NgayBatDau}"/>
+                    <DataGridTextColumn Header="Ngày kết thúc" Width="100" Binding="{Binding NgayKetThuc}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+       
+</Window>

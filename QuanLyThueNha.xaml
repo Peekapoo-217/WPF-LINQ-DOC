@@ -1,0 +1,76 @@
+﻿<Window x:Class="WPFNha.QuanLyThueNha"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFNha"
+        mc:Ignorable="d"
+        Title="QuanLyThueNha" Height="500" Width="800">
+    <Grid>
+        <StackPanel>
+            <GroupBox Header="Thông tin khách thuê nhà" Height="150">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"></ColumnDefinition>
+                        <ColumnDefinition ></ColumnDefinition>
+                        <ColumnDefinition ></ColumnDefinition>
+                        <ColumnDefinition Width="100"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+
+
+                    <TextBlock Text="Mã khách hàng" Grid.Column="0" Grid.Row="0"></TextBlock>
+                    <TextBox x:Name="txtMaKh" Grid.Column="1" Grid.Row="0"></TextBox>
+                    
+                    <TextBlock Text="Tên khách hàng" Grid.Column="0" Grid.Row="1"></TextBlock>
+                    <TextBox x:Name="txtTenKh" Grid.Column="1" Grid.Row="1"></TextBox>
+                    
+                    <GroupBox Header="Giới tính" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2">
+                        <StackPanel Orientation="Horizontal">
+                            <RadioButton x:Name="rdNam" Content="Nam" Width="70" Margin="50,1"/>
+                            <RadioButton x:Name="rdNu" Content="Nữ" Width="70"/>
+                        </StackPanel>
+                    </GroupBox>
+
+                    <TextBlock Text="Ngày sinh" Grid.Column="0" Grid.Row="4"></TextBlock>
+                    <DatePicker x:Name="dtpNgaySinh" Grid.Column="1" Grid.Row="4"></DatePicker>
+                </Grid>   
+            </GroupBox>
+
+            <GroupBox Header="Tìm kiếm" Height="50">
+                <StackPanel Orientation="Horizontal">
+                    <TextBox x:Name="txtTimKiem" Text="" Width="300" Margin="70,1"></TextBox>
+                    <Button x:Name="btnTimKiem" Width="100" Content="Tìm Khách" Click="btnTimKiem_Click"></Button>
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Header="Danh sách khách thuê nhà">
+                <DataGrid x:Name="DataGrid" Height="150" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <!--Đặt tên binding giống với các thuộc tính trong SQL-->
+                        <DataGridTextColumn Header="Mã khách hàng" Width="100" Binding="{Binding MaKhach}"/>
+                        <DataGridTextColumn Header="Tên khách hàng" Width="100" Binding="{Binding TenKhach}"/>
+                        <DataGridTextColumn Header="Giới tính" Width="100" Binding="{Binding GioiTinh}"/>
+                        <DataGridTextColumn Header="Ngày sinh" Width="100" Binding="{Binding NgaySinh}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </GroupBox>
+
+            <GroupBox Header="Chức năng" Height="50" Width="500">
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="btnThem" Content="Thêm" Width="70" Margin="10,1"></Button>
+                    <Button x:Name="btnSua" Content="Sửa" Width="70" Margin="10,1"></Button>
+                    <Button x:Name="btnXoa" Content="Xóa" Width="70" Margin="10,1"></Button>
+                    <Button x:Name="btnLamMoi" Content="Làm mới" Width="70" Margin="10,1" Click="btnLamMoi_Click"></Button>
+                </StackPanel>
+            </GroupBox>
+            
+        </StackPanel>
+    </Grid>
+</Window>

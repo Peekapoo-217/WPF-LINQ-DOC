@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataClasses">
+  <DataContextMoniker Name="/DataClassesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="4bb3e432-a33d-4ea7-b49a-d68152e2cd07" absoluteBounds="4, 0.875, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/DataClassesDataContext/HOPDONG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="35fcae1a-d2f1-41b8-913c-ef563b3b28c2" absoluteBounds="4.015, 1.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7725d98c-a920-44b1-b0fb-52158570935b" absoluteBounds="8.125, 2.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataClassesDataContext/KHACHTHUENHA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="23bc6ad4-7410-40fe-8a99-5febce032b52" absoluteBounds="8.14, 3.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.125 : 3.53929768880208); (5 : 3.53929768880208); (5 : 2.64589680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesDataContext/KHACHTHUENHA/KHACHTHUENHA_HOPDONG" />
+      <nodes>
+        <classShapeMoniker Id="7725d98c-a920-44b1-b0fb-52158570935b" />
+        <classShapeMoniker Id="4bb3e432-a33d-4ea7-b49a-d68152e2cd07" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="daffe6c7-74f6-40d2-a2a1-9992d6e943ce" absoluteBounds="0.5, 4, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataClassesDataContext/NHA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cd4ed08a-9526-4f46-90fe-e43d3430fce2" absoluteBounds="0.51499999999999968, 4.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.5 : 4); (1.5 : 1.76044840494792); (4 : 1.76044840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesDataContext/NHA/NHA_HOPDONG" />
+      <nodes>
+        <classShapeMoniker Id="daffe6c7-74f6-40d2-a2a1-9992d6e943ce" />
+        <classShapeMoniker Id="4bb3e432-a33d-4ea7-b49a-d68152e2cd07" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
